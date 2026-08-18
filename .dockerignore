@@ -1,0 +1,8 @@
+node_modules
+.git
+.env
+.chrome-qa
+qa-*.png
+uploads/*
+!uploads/.gitkeep
+npm-debug.log*

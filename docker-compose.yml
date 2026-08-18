@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: qadam_lms
+      POSTGRES_USER: qadam
+      POSTGRES_PASSWORD: qadam_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - qadam_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qadam -d qadam_lms"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    environment:
+      PORT: 3000
+      DATABASE_URL: postgres://qadam:qadam_password@db:5432/qadam_lms
+      JWT_SECRET: docker-development-secret-change-in-production
+      NODE_ENV: production
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+      VERIFICATION_TTL_MINUTES: ${VERIFICATION_TTL_MINUTES:-15}
+    ports:
+      - "3000:3000"
+    volumes:
+      - qadam_uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  qadam_postgres:
+  qadam_uploads:
