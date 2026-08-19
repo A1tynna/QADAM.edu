@@ -209,6 +209,11 @@ async function initDatabase() {
   const existing = await pool.query('SELECT COUNT(*)::int AS count FROM users');
   if (existing.rows[0].count > 0) return;
 
+  if (process.env.NODE_ENV === 'production') {
+    console.log('Production database is empty; demo accounts were not created.');
+    return;
+  }
+
   const password = await bcrypt.hash('qadam123', 10);
   const users = await pool.query(`
     INSERT INTO users (name, email, password_hash, role, class_name, subject) VALUES

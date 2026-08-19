@@ -1,0 +1,16 @@
+www.myqadam.kz {
+  redir https://myqadam.kz{uri} permanent
+}
+
+myqadam.kz {
+  encode zstd gzip
+  reverse_proxy app:3000
+
+  header {
+    -Server
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  }
+}
