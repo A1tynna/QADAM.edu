@@ -1,6 +1,9 @@
 name: Test and deploy production
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -84,6 +87,7 @@ jobs:
   deploy:
     name: Deploy to VPS
     needs: test
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment:
