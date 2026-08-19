@@ -1,4 +1,4 @@
-# Qadam.edu LMS
+# MyQadam LMS
 
 Полноценный учебный портал для подготовительной школы: авторизация, три пользовательские роли, расписание, электронный журнал, учебные материалы и объявления.
 
@@ -21,7 +21,7 @@ SMTP_PORT=587
 SMTP_SECURE=false
 SMTP_USER=your-account@gmail.com
 SMTP_PASS=your-app-password
-SMTP_FROM="Qadam.edu <your-account@gmail.com>"
+SMTP_FROM="MyQadam <your-account@gmail.com>"
 ```
 
 Для Gmail включите двухэтапную аутентификацию и создайте отдельный **пароль приложения** — обычный пароль аккаунта использовать не следует. `.env` исключён из Git и не попадёт в репозиторий или Docker-образ.
@@ -34,7 +34,9 @@ SMTP_FROM="Qadam.edu <your-account@gmail.com>"
 docker compose up --build
 ```
 
-Откройте [http://localhost:3000](http://localhost:3000).
+Откройте публичный лендинг: [http://localhost:3000](http://localhost:3000).
+
+Вход и регистрация в учебном портале: [http://localhost:3000/portal](http://localhost:3000/portal).
 
 ## Локальный запуск
 

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#12221b">
+  <meta name="description" content="Учебный портал MyQadam">
+  <title>MyQadam — учебный портал</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="toastRoot" class="toast-root" aria-live="polite"></div>
+
+  <main id="authView" class="auth-view">
+    <section class="auth-story">
+      <a class="brand brand--light" href="/" aria-label="MyQadam — на главную">
+        <span class="brand__mark">Q</span>
+        <span>MYQADAM<small>.KZ</small></span>
+      </a>
+      <div class="auth-story__content">
+        <span class="eyebrow eyebrow--light"><i></i> Один портал — весь учебный процесс</span>
+        <h1>Следующий шаг<br>начинается <em>здесь.</em></h1>
+        <p>Расписание, материалы, оценки и важные объявления — всё, что нужно для уверенного движения к цели.</p>
+      </div>
+      <div class="quote-card">
+        <div class="quote-card__avatars"><span>А</span><span>М</span><span>Д</span></div>
+        <p>«Прогресс складывается из маленьких шагов, сделанных каждый день»</p>
+      </div>
+      <div class="auth-orbit auth-orbit--one"></div>
+      <div class="auth-orbit auth-orbit--two"></div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-box">
+        <div class="auth-mobile-brand">
+          <span class="brand__mark">Q</span><b>MYQADAM<small>.KZ</small></b>
+        </div>
+        <div id="loginPane">
+          <span class="eyebrow"><i></i> Добро пожаловать</span>
+          <h2>Войдите в портал</h2>
+          <p class="auth-lead">Продолжите обучение с того места, где остановились.</p>
+          <form id="loginForm" class="form-stack">
+            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="name@myqadam.kz" required></label>
+            <label class="field"><span>Пароль</span><span class="password-wrap"><input name="password" type="password" autocomplete="current-password" placeholder="Введите пароль" required><button type="button" class="show-password" aria-label="Показать пароль">◉</button></span></label>
+            <button class="button button--primary button--wide" type="submit"><span>Войти в портал</span><b>→</b></button>
+          </form>
+          <button class="text-button" id="showRegister" type="button">Нет аккаунта? <b>Зарегистрироваться</b></button>
+        </div>
+
+        <div id="registerPane" hidden>
+          <span class="eyebrow"><i></i> Регистрация</span>
+          <h2>Создайте аккаунт</h2>
+          <p class="auth-lead">После заполнения мы отправим код на вашу почту.</p>
+          <form id="registerForm" class="form-stack">
+            <label class="field"><span>Имя и фамилия</span><input name="name" autocomplete="name" placeholder="Айлин Нурова" required></label>
+            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="name@example.com" required></label>
+            <fieldset class="role-choice">
+              <legend>Кто вы?</legend>
+              <label><input type="radio" name="role" value="student" checked><span><b>Ученик</b><small>Расписание, оценки и материалы</small></span></label>
+              <label><input type="radio" name="role" value="teacher"><span><b>Учитель</b><small>Журнал и учебные материалы</small></span></label>
+            </fieldset>
+            <div id="studentRegistrationFields" class="field-row">
+              <label class="field"><span>Номер класса</span><input name="classNumber" type="number" min="1" max="11" inputmode="numeric" placeholder="11" required></label>
+              <label class="field"><span>Буква класса</span><input name="classLetter" maxlength="1" placeholder="А" required></label>
+            </div>
+            <div id="teacherRegistrationFields" hidden>
+              <label class="field"><span>Преподаваемый предмет</span><input name="subject" placeholder="Математика"></label>
+            </div>
+            <label class="field"><span>Пароль</span><span class="password-wrap"><input id="registerPassword" name="password" type="password" minlength="10" autocomplete="new-password" placeholder="Придумайте надёжный пароль" required><button type="button" class="show-password" aria-label="Показать пароль">◉</button></span></label>
+            <div class="password-strength" id="passwordStrength">
+              <div class="strength-bar"><i></i><i></i><i></i><i></i></div>
+              <p id="strengthLabel">Пароль ещё не введён</p>
+              <ul><li data-rule="length">10+ символов</li><li data-rule="upper">Заглавная буква</li><li data-rule="lower">Строчная буква</li><li data-rule="number">Цифра</li><li data-rule="special">Спецсимвол</li><li data-rule="spaces">Без пробелов</li></ul>
+            </div>
+            <button class="button button--primary button--wide" type="submit"><span>Создать аккаунт</span><b>→</b></button>
+          </form>
+          <button class="text-button" id="showLogin" type="button">Уже есть аккаунт? <b>Войти</b></button>
+        </div>
+
+        <div id="verifyPane" hidden>
+          <span class="eyebrow"><i></i> Подтверждение почты</span>
+          <h2>Проверьте почту</h2>
+          <p class="auth-lead">Мы отправили шестизначный код на <b id="verifyEmail"></b>. Код действует 15 минут.</p>
+          <form id="verifyForm" class="form-stack">
+            <label class="field"><span>Код подтверждения</span><input class="verification-code" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="000000" required></label>
+            <button class="button button--primary button--wide" type="submit"><span>Подтвердить почту</span><b>→</b></button>
+          </form>
+          <div class="verification-actions"><button class="text-button" id="resendCode" type="button">Не пришло письмо? <b>Отправить ещё раз</b></button><button class="text-button" id="verificationBack" type="button">← Вернуться ко входу</button></div>
+        </div>
+      </div>
+      <p class="auth-footer"><a href="/">← На главную</a> · © 2026 MyQadam</p>
+    </section>
+  </main>
+
+  <div id="appView" class="app-view" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__head">
+        <a class="brand" href="#dashboard"><span class="brand__mark">Q</span><span>MYQADAM<small>.KZ</small></span></a>
+        <button class="icon-button sidebar-close" id="closeSidebar" aria-label="Закрыть меню">×</button>
+      </div>
+      <nav id="mainNav" class="main-nav" aria-label="Основная навигация"></nav>
+      <div class="sidebar-tip">
+        <span class="sidebar-tip__icon">↗</span>
+        <b>Нужна помощь?</b>
+        <p>Напишите куратору — мы на связи.</p>
+        <a href="https://wa.me/77085779167" target="_blank" rel="noreferrer">Связаться</a>
+      </div>
+      <div class="sidebar-user">
+        <span id="sidebarAvatar" class="avatar"></span>
+        <div><b id="sidebarName"></b><small id="sidebarRole"></small></div>
+        <button id="logoutButton" class="icon-button" title="Выйти" aria-label="Выйти">↪</button>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="openSidebar" aria-label="Открыть меню">☰</button>
+        <div class="topbar__title"><span id="pageKicker">Обзор</span><h1 id="pageTitle">Главная</h1></div>
+        <div class="topbar__actions">
+          <label class="search-box"><span>⌕</span><input id="globalSearch" placeholder="Поиск по разделу…"></label>
+          <button class="icon-button notification-button" data-route="news" aria-label="Объявления">♢<i id="newsBadge"></i></button>
+          <div id="topAvatar" class="avatar"></div>
+        </div>
+      </header>
+      <section id="content" class="content" aria-live="polite"></section>
+    </div>
+  </div>
+
+  <div id="modalRoot"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

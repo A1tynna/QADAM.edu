@@ -1,136 +1,705 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#12221b">
-  <meta name="description" content="Учебный портал подготовительной школы Qadam.edu">
-  <title>Qadam.edu — учебный портал</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyQadam — подготовка к ЕНТ и школе</title>
+
+    <meta name="description" content="MyQadam — подготовка к ЕНТ, школе и поступлению с личным учебным порталом">
+    <link rel="stylesheet" href="/landing.css">
+
 </head>
+
 <body>
-  <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-  <main id="authView" class="auth-view">
-    <section class="auth-story">
-      <a class="brand brand--light" href="#" aria-label="Qadam.edu">
-        <span class="brand__mark">Q</span>
-        <span>QADAM<small>.edu</small></span>
-      </a>
-      <div class="auth-story__content">
-        <span class="eyebrow eyebrow--light"><i></i> Один портал — весь учебный процесс</span>
-        <h1>Следующий шаг<br>начинается <em>здесь.</em></h1>
-        <p>Расписание, материалы, оценки и важные объявления — всё, что нужно для уверенного движения к цели.</p>
-      </div>
-      <div class="quote-card">
-        <div class="quote-card__avatars"><span>А</span><span>М</span><span>Д</span></div>
-        <p>«Прогресс складывается из маленьких шагов, сделанных каждый день»</p>
-      </div>
-      <div class="auth-orbit auth-orbit--one"></div>
-      <div class="auth-orbit auth-orbit--two"></div>
-    </section>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__inner">
 
-    <section class="auth-panel">
-      <div class="auth-box">
-        <div class="auth-mobile-brand">
-          <span class="brand__mark">Q</span><b>QADAM<small>.edu</small></b>
+            <a href="/" class="logo" aria-label="MyQadam">
+                <span class="logo__mark">Q</span>
+                <strong>MYQADAM</strong>
+            </a>
+
+            <nav class="nav">
+                <a href="#courses">Курсы</a>
+                <a href="#about">О нас</a>
+                <a href="#teachers">Преподаватели</a>
+                <a href="#reviews">Отзывы</a>
+            </nav>
+
+            <a href="/portal" class="header__button">Войти в портал</a>
+
         </div>
-        <div id="loginPane">
-          <span class="eyebrow"><i></i> Добро пожаловать</span>
-          <h2>Войдите в портал</h2>
-          <p class="auth-lead">Продолжите обучение с того места, где остановились.</p>
-          <form id="loginForm" class="form-stack">
-            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="name@qadam.edu" required></label>
-            <label class="field"><span>Пароль</span><span class="password-wrap"><input name="password" type="password" autocomplete="current-password" placeholder="Введите пароль" required><button type="button" class="show-password" aria-label="Показать пароль">◉</button></span></label>
-            <button class="button button--primary button--wide" type="submit"><span>Войти в портал</span><b>→</b></button>
-          </form>
-          <button class="text-button" id="showRegister" type="button">Нет аккаунта? <b>Зарегистрироваться</b></button>
-        </div>
+    </header>
 
-        <div id="registerPane" hidden>
-          <span class="eyebrow"><i></i> Регистрация</span>
-          <h2>Создайте аккаунт</h2>
-          <p class="auth-lead">После заполнения мы отправим код на вашу почту.</p>
-          <form id="registerForm" class="form-stack">
-            <label class="field"><span>Имя и фамилия</span><input name="name" autocomplete="name" placeholder="Айлин Нурова" required></label>
-            <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="name@example.com" required></label>
-            <fieldset class="role-choice">
-              <legend>Кто вы?</legend>
-              <label><input type="radio" name="role" value="student" checked><span><b>Ученик</b><small>Расписание, оценки и материалы</small></span></label>
-              <label><input type="radio" name="role" value="teacher"><span><b>Учитель</b><small>Журнал и учебные материалы</small></span></label>
-            </fieldset>
-            <div id="studentRegistrationFields" class="field-row">
-              <label class="field"><span>Номер класса</span><input name="classNumber" type="number" min="1" max="11" inputmode="numeric" placeholder="11" required></label>
-              <label class="field"><span>Буква класса</span><input name="classLetter" maxlength="1" placeholder="А" required></label>
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero__inner">
+
+                <div class="hero__content">
+
+                    <div class="hero__badge">
+                        Подготовительная школа нового поколения
+                    </div>
+
+                    <h1>
+                        Сделай свой
+                        <span>следующий шаг.</span>
+                    </h1>
+
+                    <p>
+                        Подготовка к ЕНТ, школе и поступлению
+                        с преподавателями, которые помогают
+                        не просто запомнить, а понять.
+                    </p>
+
+                    <div class="hero__buttons">
+
+                        <a href="#trial" class="button button--dark">
+                            Записаться на пробный урок
+                            <span>→</span>
+                        </a>
+
+                        <a href="#courses" class="button button--light">
+                            Посмотреть курсы
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero__visual">
+
+                    <div class="hero__circle"></div>
+
+                    <div class="hero__card hero__card--top">
+                        🎓 ЕНТ • Школа • Навыки
+                    </div>
+
+                    <div class="hero__student">
+                        <div class="student__head"></div>
+                        <div class="student__body"></div>
+                    </div>
+
+                    <div class="hero__card hero__card--bottom">
+                        «Не бойся ошибаться.
+                        Здесь ошибки — часть пути.»
+                    </div>
+
+                </div>
+
             </div>
-            <div id="teacherRegistrationFields" hidden>
-              <label class="field"><span>Преподаваемый предмет</span><input name="subject" placeholder="Математика"></label>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="stats">
+
+            <div class="container stats__grid">
+
+                <div class="stat">
+                    <strong>125+</strong>
+                    <span>максимальный результат на ЕНТ*</span>
+                </div>
+
+                <div class="stat">
+                    <strong>1:1</strong>
+                    <span>персональный подход</span>
+                </div>
+
+                <div class="stat">
+                    <strong>3–7</strong>
+                    <span>учеников в мини-группе</span>
+                </div>
+
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>внимания к прогрессу</span>
+                </div>
+
             </div>
-            <label class="field"><span>Пароль</span><span class="password-wrap"><input id="registerPassword" name="password" type="password" minlength="10" autocomplete="new-password" placeholder="Придумайте надёжный пароль" required><button type="button" class="show-password" aria-label="Показать пароль">◉</button></span></label>
-            <div class="password-strength" id="passwordStrength">
-              <div class="strength-bar"><i></i><i></i><i></i><i></i></div>
-              <p id="strengthLabel">Пароль ещё не введён</p>
-              <ul><li data-rule="length">10+ символов</li><li data-rule="upper">Заглавная буква</li><li data-rule="lower">Строчная буква</li><li data-rule="number">Цифра</li><li data-rule="special">Спецсимвол</li><li data-rule="spaces">Без пробелов</li></ul>
+
+        </section>
+
+
+        <!-- COURSES -->
+        <section class="section" id="courses">
+
+            <div class="container">
+
+                <div class="section__header">
+
+                    <div>
+                        <span class="section__label">
+                            MYQADAM PROGRAM
+                        </span>
+
+                        <h2>
+                            Выберите формат,
+                            который подходит именно вам.
+                        </h2>
+                    </div>
+
+                    <p>
+                        От системной групповой подготовки
+                        до полностью персонального маршрута.
+                    </p>
+
+                </div>
+
+
+                <div class="courses">
+
+                    <article class="course">
+
+                        <div>
+                            <span class="course__number">01</span>
+
+                            <h3>MyQadam Start</h3>
+
+                            <p>
+                                Групповая подготовка для тех,
+                                кто хочет системно заниматься
+                                по доступной цене.
+                            </p>
+
+                            <ul>
+                                <li>Онлайн / мини-группа 4–7 человек</li>
+                                <li>1 предмет</li>
+                                <li>2 занятия в неделю</li>
+                            </ul>
+                        </div>
+
+                        <a href="#trial">
+                            Узнать подробнее →
+                        </a>
+
+                    </article>
+
+
+                    <article class="course course--dark">
+
+                        <div>
+                            <span class="course__number">02</span>
+
+                            <h3>MyQadam Pro</h3>
+
+                            <p>
+                                Больше практики и два предмета
+                                в одном учебном ритме.
+                            </p>
+
+                            <ul>
+                                <li>Мини-группа 3–5 человек</li>
+                                <li>2 предмета</li>
+                                <li>3 занятия в неделю</li>
+                            </ul>
+                        </div>
+
+                        <a href="#trial">
+                            Узнать подробнее →
+                        </a>
+
+                    </article>
+
+
+                    <article class="course">
+
+                        <div>
+                            <span class="course__number">03</span>
+
+                            <h3>MyQadam Premium</h3>
+
+                            <p>
+                                Индивидуальная подготовка
+                                один на один с преподавателем.
+                            </p>
+
+                            <ul>
+                                <li>1 ученик + 1 преподаватель</li>
+                                <li>Индивидуальная программа</li>
+                                <li>Персональный график</li>
+                            </ul>
+                        </div>
+
+                        <a href="#trial">
+                            Узнать подробнее →
+                        </a>
+
+                    </article>
+
+
+                    <article class="course">
+
+                        <div>
+                            <span class="course__number">04</span>
+
+                            <h3>MyQadam ЕНТ Grant</h3>
+
+                            <p>
+                                Системная подготовка к гранту
+                                в мини-группе.
+                            </p>
+
+                            <ul>
+                                <li>3–5 учеников</li>
+                                <li>Профильные + обязательные предметы</li>
+                                <li>3 занятия в неделю</li>
+                                <li>Пробные ЕНТ и разбор ошибок</li>
+                            </ul>
+                        </div>
+
+                        <a href="#trial">
+                            Узнать подробнее →
+                        </a>
+
+                    </article>
+
+
+                    <article class="course">
+
+                        <div>
+                            <span class="course__number">05</span>
+
+                            <h3>MyQadam ЕНТ Grant Individual</h3>
+
+                            <p>
+                                Максимально персональный
+                                маршрут к цели.
+                            </p>
+
+                            <ul>
+                                <li>Индивидуальный преподаватель</li>
+                                <li>Персональный график</li>
+                                <li>Индивидуальная программа</li>
+                                <li>3–4 занятия в неделю</li>
+                            </ul>
+                        </div>
+
+                        <a href="#trial">
+                            Узнать подробнее →
+                        </a>
+
+                    </article>
+
+                </div>
+
             </div>
-            <button class="button button--primary button--wide" type="submit"><span>Создать аккаунт</span><b>→</b></button>
-          </form>
-          <button class="text-button" id="showLogin" type="button">Уже есть аккаунт? <b>Войти</b></button>
+
+        </section>
+
+<!-- =========================
+     TEACHERS
+========================= -->
+<section class="section teachers" id="teachers">
+    <div class="container">
+
+        <div class="section__header">
+            <div>
+                <span class="section__label">НАША КОМАНДА</span>
+                <h2>Преподаватели, которым можно доверять</h2>
+            </div>
+
+            <p>
+                Выберите преподавателя, который подходит именно вам.
+            </p>
         </div>
 
-        <div id="verifyPane" hidden>
-          <span class="eyebrow"><i></i> Подтверждение почты</span>
-          <h2>Проверьте почту</h2>
-          <p class="auth-lead">Мы отправили шестизначный код на <b id="verifyEmail"></b>. Код действует 15 минут.</p>
-          <form id="verifyForm" class="form-stack">
-            <label class="field"><span>Код подтверждения</span><input class="verification-code" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="000000" required></label>
-            <button class="button button--primary button--wide" type="submit"><span>Подтвердить почту</span><b>→</b></button>
-          </form>
-          <div class="verification-actions"><button class="text-button" id="resendCode" type="button">Не пришло письмо? <b>Отправить ещё раз</b></button><button class="text-button" id="verificationBack" type="button">← Вернуться ко входу</button></div>
-        </div>
-      </div>
-      <p class="auth-footer">© 2026 Qadam.edu · Учимся понимать, а не запоминать</p>
-    </section>
-  </main>
 
-  <div id="appView" class="app-view" hidden>
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar__head">
-        <a class="brand" href="#dashboard"><span class="brand__mark">Q</span><span>QADAM<small>.edu</small></span></a>
-        <button class="icon-button sidebar-close" id="closeSidebar" aria-label="Закрыть меню">×</button>
-      </div>
-      <nav id="mainNav" class="main-nav" aria-label="Основная навигация"></nav>
-      <div class="sidebar-tip">
-        <span class="sidebar-tip__icon">↗</span>
-        <b>Нужна помощь?</b>
-        <p>Напишите куратору — мы на связи.</p>
-        <a href="https://wa.me/77085779167" target="_blank" rel="noreferrer">Связаться</a>
-      </div>
-      <div class="sidebar-user">
-        <span id="sidebarAvatar" class="avatar"></span>
-        <div><b id="sidebarName"></b><small id="sidebarRole"></small></div>
-        <button id="logoutButton" class="icon-button" title="Выйти" aria-label="Выйти">↪</button>
-      </div>
-    </aside>
+        <div class="teachers-slider">
 
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <div class="workspace">
-      <header class="topbar">
-        <button class="icon-button mobile-menu" id="openSidebar" aria-label="Открыть меню">☰</button>
-        <div class="topbar__title"><span id="pageKicker">Обзор</span><h1 id="pageTitle">Главная</h1></div>
-        <div class="topbar__actions">
-          <label class="search-box"><span>⌕</span><input id="globalSearch" placeholder="Поиск по разделу…"></label>
-          <button class="icon-button notification-button" data-route="news" aria-label="Объявления">♢<i id="newsBadge"></i></button>
-          <div id="topAvatar" class="avatar"></div>
+            <button class="teachers-arrow teachers-arrow--left" id="teachersPrev">
+                ←
+            </button>
+
+
+            <div class="teachers-window">
+
+                <div class="teacher-grid" id="teacherGrid">
+
+
+                    <!-- ПРЕПОДАВАТЕЛЬ 1 -->
+
+                    <div class="teacher-card">
+
+                        <img
+                            src="/landing-assets/teacher-1.PNG"
+                            alt="Макпал Хакимовна"
+                        >
+
+                        <div class="teacher-info">
+
+                            <h3>Макпал Хакимовна</h3>
+
+                            <p class="teacher-subject">
+                                История Казахстана · Математика средней школы
+                            </p>
+
+                            <p>
+🎓 Образование: Astana IT university;AI Business
+👩‍🏫 Опыт: более 3 лет
+
+📚 Подготовка: ЕНТ / 10–11 классы/школьная программа 5-11 классы
+
+
+🏆 Результаты:
+•Личный результат ЕНТ по истории Казахстана— 18/20
+•20+ учеников набрали от 15 баллов
+Язык обучения:русский
+
+💡 О преподавателе:
+Объясняю сложные темы простым и понятным языком, уделяю внимание пробелам в знаниях и регулярно разбираю ошибки. На занятиях сочетаю школьную программу с практикой заданий формата ЕНТ, чтобы ученик не просто запоминал материал, а понимал его и уверенно применял на тестировании.                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ПРЕПОДАВАТЕЛЬ 2 -->
+
+                    <div class="teacher-card">
+
+                        <img
+                            src="/landing-assets/teacher-2.JPG"
+                            alt="Жаннур Серикжановна"
+                        >
+
+                        <div class="teacher-info">
+
+                            <h3>Жаннур Серикжановна</h3>
+
+                            <p class="teacher-subject">
+                                Математика · История Казахстана
+                            </p>
+
+                            <p>
+                                Объясняю сложное простым языком
+                                и помогаю системно подготовиться.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ПРЕПОДАВАТЕЛЬ 3 -->
+
+                    <div class="teacher-card">
+
+                        <img
+                            src="/landing-assets/teacher-placeholder.svg"
+                            alt="Преподаватель MyQadam"
+                        >
+
+                        <div class="teacher-info">
+
+                            <h3>Ануар Дауренбек </h3>
+
+                            <p class="teacher-subject">
+                                Математика
+                            </p>
+
+                            <p>
+                                🎓 Образование: Astana IT university 2-ой курс обучения
+👩‍🏫 Опыт: более 1 года
+
+📚 Подготовка: ЕНТ / 10–11 классы
+
+🏆 Результаты:
+•Личный результат ЕНТ по Математике — 49/50
+•20+ учеников набрали от 35 баллов
+Язык обучения: Казахский/Русский
+
+💡 О преподавателе:
+Молодой преподаватель, объясню любую тему легко и на языке подростков. Знаю много современных методов, в том числе и китайские для решения задач.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ПРЕПОДАВАТЕЛЬ 4 -->
+
+                    <div class="teacher-card">
+
+                        <img
+                            src="/landing-assets/teacher-placeholder.svg"
+                            alt="Преподаватель MyQadam"
+                        >
+
+                        <div class="teacher-info">
+
+                            <h3>Сабира Жаксыбаева</h3>
+
+                            <p class="teacher-subject">
+                                Английский язык
+                            </p>
+
+                            <p>
+                               🎓 Образование:
+•Ontario Secondary School Diploma
+•CELTA certificate
+•Toronto Metropolitan University 1-ый курс обучения
+👩‍🏫 Опыт: менее года
+
+📚 Подготовка: Casual English/Grammar
+
+🏆 Результаты:
+•OSSLT pass (350 score)
+•8 часов наблюдаемой педагогической практики
+•Поднятие уровня с A2-B2 более 15+ учеников
+Язык обучения: Английский
+
+💡 О преподавателе:
+Помогаю поднять любой уровень английского до желаемого. Есть опыт работы как и с новичками, так и с почти носителями. Объясняю легко и понятно по методике Cambridge. Умею подобрать подход к любому ученику.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ПРЕПОДАВАТЕЛЬ 5 -->
+
+                    <div class="teacher-card">
+
+                        <img
+                            src="/landing-assets/teacher-placeholder.svg"
+                            alt="Преподаватель MyQadam"
+                        >
+
+                        <div class="teacher-info">
+
+                            <h3>Имя преподавателя</h3>
+
+                            <p class="teacher-subject">
+                                Английский язык · История
+                            </p>
+
+                            <p>
+                                Практика, обратная связь и поддержка
+                                на каждом этапе обучения.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button class="teachers-arrow teachers-arrow--right" id="teachersNext">
+                →
+            </button>
+
         </div>
-      </header>
-      <section id="content" class="content" aria-live="polite"></section>
+
+
+        <div class="teachers-dots" id="teachersDots"></div>
+
     </div>
-  </div>
+</section>
 
-  <div id="modalRoot"></div>
-  <script src="/app.js" defer></script>
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="section reviews" id="reviews">
+    <div class="container">
+
+        <div class="section__header">
+            <div>
+                <span class="section__label">ОТЗЫВЫ</span>
+                <h2>Истории наших студентов</h2>
+            </div>
+
+            <p>
+                Результаты и впечатления учеников,
+                которые прошли этот путь вместе с MyQadam.
+            </p>
+        </div>
+
+        <div class="review-grid">
+
+            <div class="review">
+                <span>ЕНТ · 125 БАЛЛОВ</span>
+
+                <p>
+                    «Мне очень понравился формат занятий.
+                    Преподаватель всегда объяснял ошибки
+                    и помогал понять, что именно нужно улучшить».
+                </p>
+
+                <b>— Алина, 11 класс</b>
+            </div>
+
+
+            <div class="review">
+                <span>МАТЕМАТИКА</span>
+
+                <p>
+                    «Раньше я боялась математики, а после занятий
+                    стала намного увереннее решать задания.
+                    Особенно помогала обратная связь».
+                </p>
+
+                <b>— Дана, 10 класс</b>
+            </div>
+
+
+            <div class="review">
+                <span>АНГЛИЙСКИЙ</span>
+
+                <p>
+                    «Занятия проходят легко и интересно.
+                    Нравится, что мы много практикуемся,
+                    а не просто учим правила».
+                </p>
+
+                <b>— Мадина, 9 класс</b>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!-- ABOUT -->
+        <section class="section about" id="about">
+
+            <div class="container about__box">
+
+                <div>
+
+                    <span class="section__label">
+                        НАШ ПОДХОД
+                    </span>
+
+                    <h2>
+                        Мы не просто готовим
+                        к экзамену.
+                        Мы учим понимать.
+                    </h2>
+
+                    <p>
+                        В MyQadam обучение строится на практике,
+                        обратной связи и рефлексии.
+                    </p>
+
+                </div>
+
+
+                <div class="principles">
+
+                    <div>
+                        <strong>01 · Практика</strong>
+                        <p>
+                            Задачи, тесты и реальные
+                            экзаменационные форматы.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>02 · Feedback</strong>
+                        <p>
+                            Преподаватель помогает понять
+                            ошибки и точки роста.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>03 · Рефлексия</strong>
+                        <p>
+                            Ученик видит свой прогресс
+                            и понимает следующий шаг.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong>04 · Поддержка</strong>
+                        <p>
+                            Ошибаться нормально.
+                            Важно продолжать двигаться.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRIAL -->
+        <section class="trial" id="trial">
+
+            <div class="container trial__inner">
+
+                <span class="section__label">
+                    ПЕРВЫЙ ШАГ
+                </span>
+
+                <h2>
+                    Готовы сделать
+                    следующий шаг?
+                </h2>
+
+                <p>
+                    Запишитесь на пробный урок
+                    и познакомьтесь с преподавателем MyQadam.
+                </p>
+
+                <a href="https://wa.me/77085779167?text=Здравствуйте!%20Хочу%20записаться%20на%20пробный%20урок%20в%20MyQadam" class="button button--dark" target="_blank" rel="noreferrer">
+                    Записаться на пробный урок →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer__inner">
+
+            <div>
+                <a href="/" class="logo">
+                    <span class="logo__mark">Q</span><strong>MYQADAM</strong>
+                </a>
+
+                <p>
+                    Подготовительная школа
+                    для тех, кто хочет большего.
+                </p>
+            </div>
+
+            <div>
+                <p>Instagram</p>
+                <p>WhatsApp</p>
+                <p>Telegram</p>
+            </div>
+
+            <div>
+                © 2026 MyQadam
+            </div>
+
+        </div>
+
+    </footer>
+
+<script src="/landing.js" defer></script>
 </body>
 </html>

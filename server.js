@@ -101,9 +101,9 @@ async function sendVerificationEmail({ email, name, code }) {
     await mailer.sendMail({
       from: process.env.SMTP_FROM,
       to: email,
-      subject: `${code} — подтверждение почты Qadam.edu`,
-      text: `Здравствуйте, ${name}! Код подтверждения Qadam.edu: ${code}. Он действует ${VERIFICATION_TTL_MINUTES} минут. Если вы не регистрировались, проигнорируйте письмо.`,
-      html: `<div style="max-width:560px;margin:auto;padding:32px;font-family:Arial,sans-serif;color:#17211c"><div style="font-size:22px;font-weight:800;color:#173f31">QADAM<span style="color:#7b9813">.edu</span></div><h1 style="margin:32px 0 12px;font-size:28px">Подтвердите вашу почту</h1><p style="color:#65716a;line-height:1.6">Здравствуйте, ${String(name).replace(/[<>&]/g, '')}! Введите этот код на странице регистрации:</p><div style="margin:28px 0;padding:20px;border-radius:14px;background:#eff8c9;color:#173f31;text-align:center;font-size:36px;font-weight:800;letter-spacing:10px">${code}</div><p style="color:#65716a;font-size:13px">Код действует ${VERIFICATION_TTL_MINUTES} минут. Если вы не создавали аккаунт, просто проигнорируйте письмо.</p></div>`,
+      subject: `${code} — подтверждение почты MyQadam`,
+      text: `Здравствуйте, ${name}! Код подтверждения MyQadam: ${code}. Он действует ${VERIFICATION_TTL_MINUTES} минут. Если вы не регистрировались, проигнорируйте письмо.`,
+      html: `<div style="max-width:560px;margin:auto;padding:32px;font-family:Arial,sans-serif;color:#132238"><div style="font-size:22px;font-weight:800;color:#132238">MYQADAM<span style="color:#247fb5">.KZ</span></div><h1 style="margin:32px 0 12px;font-size:28px">Подтвердите вашу почту</h1><p style="color:#68798a;line-height:1.6">Здравствуйте, ${String(name).replace(/[<>&]/g, '')}! Введите этот код на странице регистрации:</p><div style="margin:28px 0;padding:20px;border-radius:14px;background:#e8f7ff;color:#132238;text-align:center;font-size:36px;font-weight:800;letter-spacing:10px">${code}</div><p style="color:#68798a;font-size:13px">Код действует ${VERIFICATION_TTL_MINUTES} минут. Если вы не создавали аккаунт, просто проигнорируйте письмо.</p></div>`,
     });
   } catch (error) {
     console.error('SMTP delivery failed:', error.message);
@@ -640,6 +640,10 @@ app.get('/api/health', asyncRoute(async (_req, res) => {
   res.json({ status: 'ok' });
 }));
 
+app.get(['/portal', '/portal/'], (_req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'portal.html'));
+});
+
 app.use((req, res, next) => {
   if (req.method === 'GET' && !req.path.startsWith('/api/')) {
     return res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -657,7 +661,7 @@ app.use((error, _req, res, _next) => {
 async function start() {
   try {
     await initDatabase();
-    app.listen(PORT, () => console.log(`Qadam LMS: http://localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`MyQadam LMS: http://localhost:${PORT}`));
   } catch (error) {
     console.error('Не удалось подключиться к PostgreSQL:', error.message);
     process.exit(1);

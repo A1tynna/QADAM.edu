@@ -197,7 +197,7 @@ async function renderDashboard() {
         <div class="today-list">${shownLessons.length ? shownLessons.map(todayLesson).join('') : emptyState('Занятий пока нет', 'Расписание появится здесь после публикации', '▦')}</div>
       </article>
       <article class="card">
-        <header class="card__head"><div><h3>Последние новости</h3><p>Важное в Qadam.edu</p></div><button class="link-button" data-route="news">Все →</button></header>
+        <header class="card__head"><div><h3>Последние новости</h3><p>Важное в MyQadam</p></div><button class="link-button" data-route="news">Все →</button></header>
         <div class="news-mini">${news.slice(0, 3).map((item) => `<div class="news-mini__item"><span class="news-mini__icon">${item.pinned ? '★' : '◌'}</span><div><b>${escapeHtml(item.title)}</b><span>${formatDate(item.published_at)}</span></div></div>`).join('') || emptyState('Новостей нет', 'Новые объявления появятся здесь', '◌')}</div>
       </article>
     </div>`;
