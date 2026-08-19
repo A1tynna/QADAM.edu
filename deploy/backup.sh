@@ -1,5 +1,6 @@
 #!/bin/sh
 set -eu
+umask 077
 
 PROJECT_DIR=/opt/myqadam
 BACKUP_DIR=/var/backups/myqadam

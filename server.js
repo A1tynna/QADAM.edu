@@ -11,6 +11,7 @@ const nodemailer = require('nodemailer');
 const { Pool } = require('pg');
 
 const app = express();
+app.disable('x-powered-by');
 const PORT = Number(process.env.PORT) || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'qadam-local-development-secret';
 const DATABASE_URL = process.env.DATABASE_URL || 'postgres://qadam:qadam_password@localhost:5432/qadam_lms';
