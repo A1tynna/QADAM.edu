@@ -1,0 +1,11 @@
+[Unit]
+Description=MyQadam PostgreSQL and uploads backup
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /opt/myqadam/deploy/backup.sh
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
